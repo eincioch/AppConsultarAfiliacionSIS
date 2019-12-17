@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 FrontEnd", "03 FrontEnd", "{9A582681-D4E6-4F3B-A19F-87F7B2DF14F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Backend", "02 Backend", "{03E49269-C310-4E58-AC36-B6B32D178502}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVSoft.Backend.ConsultSIS", "EVSoft.Backend.ConsultSIS\EVSoft.Backend.ConsultSIS.csproj", "{A56D20A9-557A-4599-9E92-2EBF7B4BA9D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 WebApi", "01 WebApi", "{5EE430C1-85AE-4AF7-AF30-40AF49A8E9FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVSoft.WebApi.ConsultSIS", "EVSoft.WebApi.ConsultSIS\EVSoft.WebApi.ConsultSIS.csproj", "{5B30E95B-B75E-4524-8920-058532552334}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A56D20A9-557A-4599-9E92-2EBF7B4BA9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A56D20A9-557A-4599-9E92-2EBF7B4BA9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A56D20A9-557A-4599-9E92-2EBF7B4BA9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A56D20A9-557A-4599-9E92-2EBF7B4BA9D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B30E95B-B75E-4524-8920-058532552334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B30E95B-B75E-4524-8920-058532552334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B30E95B-B75E-4524-8920-058532552334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B30E95B-B75E-4524-8920-058532552334}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A56D20A9-557A-4599-9E92-2EBF7B4BA9D3} = {03E49269-C310-4E58-AC36-B6B32D178502}
+		{5B30E95B-B75E-4524-8920-058532552334} = {5EE430C1-85AE-4AF7-AF30-40AF49A8E9FA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {745EAABF-F5CD-44C0-857C-DBE0554EC227}
+	EndGlobalSection
+EndGlobal
