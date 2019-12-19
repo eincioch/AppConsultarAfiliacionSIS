@@ -11,7 +11,12 @@ namespace EVSoft.Backend.ConsultSIS.Services
 {
     public class ServiceClient
     {
+#if DEBUG
         string BaseEndPoint = "http://172.16.2.21:5000/api/SISAfiliacion/"; //1/40606047";
+#else
+        string BaseEndPoint = "https://apiafiliacionsis.azurewebsites.net/api/SISAfiliacion/"; //1/40606047";
+#endif
+
 
         HttpClient httpClient;
 

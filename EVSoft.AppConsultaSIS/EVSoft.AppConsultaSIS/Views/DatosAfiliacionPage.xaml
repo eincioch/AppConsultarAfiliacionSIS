@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EVSoft.AppConsultaSIS.Views.DatosAfiliacionPage"
+             Title="Información Afiliado">
+    
+    <ContentPage.Resources>
+
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                        Value="LightSkyBlue" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource FlexoBold}" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                    Value="StartAndExpand" />
+            </Style>
+
+            <Style x:Key="ContenidLabelStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource FlexoRegular}" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                    Value="Center" />
+            </Style>
+
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="BorderColor" 
+                            Value="#757575">
+                </Setter>
+                <Setter Property="Margin">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="5,10,5,0"/>
+                            <On Platform="iOS" Value="0,5"/>
+                        </OnPlatform>
+                    </Setter.Value>
+
+                </Setter>
+                <Setter Property="Padding">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="0,0,0,-1"/>
+                            <On Platform="iOS" Value="0"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="BackgroundColor">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="Android" Value="{StaticResource WhiteColor}"/>
+                            <On Platform="iOS" Value="Transparent"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="OutlineColor">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="Android" Value="{StaticResource UCV_1}"/>
+                            <On Platform="iOS" Value="{StaticResource UCV_1}"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="CornerRadius">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Single">
+                            <On Platform="Android" Value="10"/>
+                            <On Platform="iOS" Value="0"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="IsClippedToBounds" Value="True"/>
+
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout 
+                Spacing="10">
+            <StackLayout.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="Android" Value="0,0,2,0"/>
+                    <On Platform="iOS" Value="0,50,0,0"/>
+                </OnPlatform>
+            </StackLayout.Margin>
+
+            <ScrollView 
+                    VerticalScrollBarVisibility="Always" 
+                    HorizontalScrollBarVisibility="Never"
+                    Padding="5">
+                <!--<pancake:PancakeView
+                    BackgroundGradientAngle="180"
+                    BackgroundGradientEndColor="#4C273C"
+                    BackgroundGradientStartColor="#A62C60"
+                    CornerRadius="20"
+                    Elevation="4"
+                    HasShadow="True"
+                    HorizontalOptions="FillAndExpand">-->
+                <Grid
+                            VerticalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Frame 
+                        Style="{StaticResource FrameStyle}"
+                        Margin="3,10,10,10" 
+                        HasShadow="True"
+                        Grid.Column="1">
+
+                        <Grid Padding="10,10,10,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <!--row 0-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 1-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 2-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 3-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 4-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 5-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 6-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 7-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 8-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 9-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 10-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 11-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 12-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 13-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 14-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 15-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 16-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 17-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 18-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 19-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 20-->
+                                <RowDefinition Height="Auto"/>
+                                <!--row 21-->
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <!--column 0-->
+                                <ColumnDefinition Width="*"/>
+                                <!--column 1-->
+                            </Grid.ColumnDefinitions>
+
+                            <!--Datos paciente-->
+                            <Label Grid.ColumnSpan="2" Grid.Row="0"
+                                    Text="DATOS PACIENTE" 
+                                    d:BackgroundColor="AntiqueWhite"
+                                    Style="{StaticResource ContenidLabelStyle}"/>
+
+                            <!--apePaterno-->
+                            <Label Grid.Column="0" Grid.Row="1"
+                                    HorizontalOptions="End"
+                                    Text="Apellido Paterno:" 
+                                    d:BackgroundColor="AntiqueWhite"
+                                    Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="1"
+                                   Text="{Binding AfiliadoEntity.apePaterno}"
+                                   d:Text="INCIO"
+                                   d:BackgroundColor="AntiqueWhite"
+                                   Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--apeMaterno-->
+                            <Label Grid.Column="0" Grid.Row="2"
+                                          HorizontalOptions="End"
+                                        Text="Apellido Materno:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="2"
+                                           Text="{Binding AfiliadoEntity.apeMaterno}"
+                                   d:Text="Chapilliquen"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--nombres-->
+                            <Label Grid.Column="0" Grid.Row="3"
+                                          HorizontalOptions="End"
+                                        Text="Nombres:"
+                                          Style="{StaticResource ContenidLabelStyle}" />
+                            <Label Grid.Column="1" Grid.Row="3"
+                                        Text="{Binding AfiliadoEntity.nombres}"
+                                   d:Text="Enrique David Jose"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--genero-->
+                            <Label Grid.Column="0" Grid.Row="4"
+                                          HorizontalOptions="End"
+                                        Text="Genero:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="4"
+                                        Text="{Binding AfiliadoEntity.genero}"
+                                   d:Text="MASCULINO"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--fecNacimiento-->
+                            <Label Grid.Column="0" Grid.Row="5"
+                                          HorizontalOptions="End"
+                                        Text="Fecha Nacimiento:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="5"
+                                        Text="{Binding AfiliadoEntity.fecNacimiento}"
+                                   d:Text="20-05-1980"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--idUbigeo-->
+                            <Label Grid.Column="0" Grid.Row="6"
+                                          HorizontalOptions="End"
+                                        Text="Ubigeo:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="6"
+                                        Text="{Binding AfiliadoEntity.idUbigeo}"
+                                   d:Text="130101"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--direccion-->
+                            <Label Grid.Column="0" Grid.Row="7"
+                                          HorizontalOptions="End"
+                                        Text="Dirección:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="7"
+                                        Text="{Binding AfiliadoEntity.direccion}"
+                                   d:Text="La Rinconada"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+
+
+                            <!--Datos Centro de atenció SIS-->
+                            <BoxView HeightRequest="1" 
+                                 BackgroundColor="{StaticResource UCV_1}" 
+                                 Grid.ColumnSpan="2" Grid.Row="8" Margin="5,0,15,0"/>
+
+                            <!--Datos Centro atención-->
+                            <Label Grid.ColumnSpan="2" Grid.Row="9"
+                                    Text="DATOS CENTRO ATENCIÓN" 
+                                    d:BackgroundColor="AntiqueWhite"
+                                    Style="{StaticResource ContenidLabelStyle}"/>
+                            
+                            <!--eess-->
+                            <Label Grid.Column="0" Grid.Row="10"
+                                          HorizontalOptions="End"
+                                        Text="Cod. EESS:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="10"
+                                        Text="{Binding AfiliadoEntity.eess}"
+                                   d:Text="00005205"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+
+                            
+                            <!--descEESS-->
+                            <Label Grid.Column="0" Grid.Row="11"
+                                          HorizontalOptions="End"
+                                        Text="Centro atención:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="11"
+                                        Text="{Binding AfiliadoEntity.descEESS}"
+                                   d:Text="PESQUEDA II"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--fecAfiliacion-->
+                            <Label Grid.Column="0" Grid.Row="12"
+                                          HorizontalOptions="End"
+                                        Text="Fecha afiliación:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="12"
+                                        Text="{Binding AfiliadoEntity.fecAfiliacion}"
+                                   d:Text="12-06-2019"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+                            
+                            <!--descEESSUbigeo-->
+                            <Label Grid.Column="0" Grid.Row="13"
+                                          HorizontalOptions="End"
+                                        Text="Estado:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="13"
+                                        Text="{Binding AfiliadoEntity.descEESSUbigeo}"
+                                   d:Text="Dpto: LA LIBERTAD - Prov: TRUJILLO - Dist: TRUJILLO"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--descTipoSeguro-->
+                            <Label Grid.Column="0" Grid.Row="14"
+                                        HorizontalOptions="End"
+                                        Text="Tipo de Seguro:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="14"
+                                        Text="{Binding AfiliadoEntity.descTipoSeguro}"
+                                   d:Text="2010-01-24"
+                                        Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--contrato-->
+                            <Label Grid.Column="0" Grid.Row="15"
+                                        HorizontalOptions="End"
+                                        Text="Contrato:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="15"
+                                        Text="{Binding AfiliadoEntity.contrato}"
+                                   d:Text="2-40606047"
+                                        Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--fecCaducidad-->
+                            <Label Grid.Column="0" Grid.Row="16"
+                                        HorizontalOptions="End"
+                                        Text="Fecha Caducidad:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="16"
+                                        Text="{Binding AfiliadoEntity.fecCaducidad}"
+                                   d:Text=""
+                                        Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--estado-->
+                            <Label Grid.Column="0" Grid.Row="17"
+                                        HorizontalOptions="End"
+                                        Text="Estado:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="17"
+                                        Text="{Binding AfiliadoEntity.estado}"
+                                   d:Text="ACTIVO"
+                                        Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--idNumReg-->
+                            <Label Grid.Column="0" Grid.Row="18"
+                                        HorizontalOptions="End"
+                                        Text="Numero Registro:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="18"
+                                        Text="{Binding AfiliadoEntity.idNumReg}"
+                                   d:Text="24581210"
+                                        Style="{StaticResource TitleLabelStyle}"/>
+
+                            <!--nroContrato-->
+                            <Label Grid.Column="0" Grid.Row="19"
+                                        HorizontalOptions="End"
+                                        Text="Numero Contrato:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="19"
+                                        Text="{Binding AfiliadoEntity.nroContrato}"
+                                   d:Text="40606047"
+                                        Style="{StaticResource TitleLabelStyle}"/>
+
+                            <BoxView HeightRequest="1" 
+                                 BackgroundColor="{StaticResource UCV_1}" 
+                                 Grid.ColumnSpan="2" Grid.Row="20" Margin="5,0,15,0"/>
+
+                            <!--msgConfidencial-->
+                            <Label Grid.Column="0" Grid.Row="21"
+                                        HorizontalOptions="End"
+                                        Text="Confidencial:"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                            <Label Grid.Column="1" Grid.Row="21"
+                                        Text="{Binding AfiliadoEntity.msgConfidencial}"
+                                   d:Text="Su consulta esta siendo registrada con su identificacion. \n         Recuerde que usted es responsable por la confidencialidad de la informacion consultada, segun la Ley de Proteccion de Datos Personales."
+                                        Style="{StaticResource TitleLabelStyle}"/>
+
+                        </Grid>
+                    </Frame>
+                </Grid>
+                <!--</pancake:PancakeView>-->
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

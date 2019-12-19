@@ -1,8 +1,12 @@
 ﻿using EVSoft.AppConsultaSIS.Model;
 using EVSoft.AppConsultaSIS.ViewModel.Base;
+using EVSoft.AppConsultaSIS.Views;
+using EVSoft.Backend.ConsultSIS.Services;
+using EVSoft.WebApi.ConsultSIS.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -10,6 +14,8 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
+		public INavigation Navigation { get; set; }
+
 		private List<TipoDocumento> tipoDocumentos;
 
 		public List<TipoDocumento> TipoDocumentos
@@ -25,7 +31,14 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 		public TipoDocumento SelectedTipoDocumento
 		{
 			get { return selectedTipoDocumento; }
-			set { selectedTipoDocumento = value; }
+			set
+			{
+				if (selectedTipoDocumento != value)
+				{
+					selectedTipoDocumento = value;
+					RaisePropertyChanged();
+				}
+			}
 		}
 
 		private string _nroDocu;
@@ -38,25 +51,47 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 			}
 		}
 
+		public ICommand CommandFind { get; private set; }
 
-		//public ICommand CommandFind { get; private set; }
-		public ICommand CommandFind => new Command(Consultar);
-
-		async void Consultar()
+		public MainViewModel(INavigation navigation)
 		{
-			if (Validate())
-			{
-				//var result = await _logInService.LogIn(UserName, Password);
-				Application.Current.MainPage.DisplayAlert("Hola", "me pulsaste!", "Aceptar").ConfigureAwait(true);
-			}
+			Navigation = navigation;
+			TipoDocumentos = TipoDocumentoData.tipoDocumentos;
+
+			CommandFind = new Command<List<AfiliadoEntity>>(async (model) => await Consultar(model).ConfigureAwait(true));
 		}
 
-		public MainViewModel()
+		async Task Consultar(List<AfiliadoEntity> afiliadoEntity)
 		{
-			IsBusy = true;
-			TipoDocumentos = TipoDocumentoData.tipoDocumentos;
-			IsBusy = false;
+			try
+			{
+				if (Validate())
+				{
+					IsBusy = true;
+					ServiceClient serviceClient = new ServiceClient();
 
+					afiliadoEntity = await serviceClient.GetAfiliacionAsync(SelectedTipoDocumento.Id.ToString(), NroDocu);
+
+					if (afiliadoEntity.Count > 0)
+						if (afiliadoEntity[0].codError == "0000")
+
+							
+							await Navigation.PushModalAsync(new DatosAfiliacionPage(new DatosAfiliacionViewModel(afiliadoEntity[0], Navigation))).ConfigureAwait(true);
+						else
+							await Application.Current.MainPage.DisplayAlert("Resultado", "Usted NO cuenta con SIS, consulte ha ?", "Aceptar").ConfigureAwait(true);
+					else
+						await Application.Current.MainPage.DisplayAlert("Error", "Algó salio mal, vuelva a intentarlo", "Aceptar").ConfigureAwait(true);
+
+				}
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+			finally
+			{
+				IsBusy = false;
+			}
 		}
 
 		private bool Validate() {

@@ -4,6 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundColor="White"
+             BackgroundImageSource="fondo_ui.png"
              x:Class="EVSoft.AppConsultaSIS.MainPage"
              Title="Consultar Afiliacion SIS MINSA">
 
@@ -123,7 +125,9 @@
         <ScrollView
             Margin="5,0,0,5"
             VerticalOptions="Center">
-            <StackLayout>
+            
+            <StackLayout
+                VerticalOptions="FillAndExpand">
 
                 <StackLayout.Margin>
                     <OnPlatform x:TypeArguments="Thickness">
@@ -133,11 +137,12 @@
                 </StackLayout.Margin>
 
                 <Grid VerticalOptions="Center" 
-                      ColumnSpacing="0" RowSpacing="0">
+                      ColumnSpacing="0" RowSpacing="7">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
@@ -146,14 +151,18 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
+                    <Image Grid.ColumnSpan="2" Grid.Row="0"
+                        Source="bannersis.jpg"
+                           HorizontalOptions="CenterAndExpand"/>
+                    
                     <!--Tipo documento-->
-                    <Label Grid.Column="0" Grid.Row="0" 
+                    <Label Grid.Column="0" Grid.Row="1" 
                         Margin="0,10,0,0"
                         HorizontalOptions="End"
                         Style="{StaticResource ContenidLabelStyle}"
                         Text="Tipo Documento:"/>
 
-                    <Picker Grid.Column="1" Grid.Row="0" 
+                    <Picker Grid.Column="1" Grid.Row="1" 
                         Title="Seleccione..." 
                             WidthRequest="250"
                         TitleColor="{d:StaticResource UCV_1}"
@@ -164,18 +173,18 @@
                     </Picker>
 
                     <!--Nro documento-->
-                    <Label Grid.Column="0" Grid.Row="1"
+                    <Label Grid.Column="0" Grid.Row="2"
                            Margin="0,10,0,0"
                         HorizontalOptions="End"
                         Text="Numero:"
                         Style="{StaticResource ContenidLabelStyle}"/>
-                    <Entry Grid.Column="1" Grid.Row="1" 
+                    <Entry Grid.Column="1" Grid.Row="2" 
                         Text="{Binding NroDocu}"
                            WidthRequest="250"
                            d:Text="40606047"
                         Style="{StaticResource TitleLabelStyle}"/>
 
-                    <Button Grid.Row="2"  Grid.ColumnSpan="2"
+                    <Button Grid.Row="3"  Grid.ColumnSpan="2"
                             Margin="0,10"
                         Text="🔍 Buscar"
                         TextColor="{StaticResource WhiteColor}"

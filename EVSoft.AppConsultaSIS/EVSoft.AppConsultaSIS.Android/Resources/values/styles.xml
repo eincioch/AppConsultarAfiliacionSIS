@@ -27,4 +27,13 @@
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#FF4081</item>
   </style>
+
+  <!-- The launcher theme. It sets the main window background to the launch_screen drawable -->
+  <style
+      name="MainTheme.Launcher">
+    <item name="android:windowBackground">@drawable/launch_screen</item>
+    <!--<item name="android:windowNoTitle">false</item>
+    <item name="android:windowFullscreen">true</item>
+    <item name="colorPrimaryDark">#FFFF</item>-->
+  </style>
 </resources>

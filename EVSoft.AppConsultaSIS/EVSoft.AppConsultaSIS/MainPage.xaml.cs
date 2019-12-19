@@ -14,10 +14,12 @@ namespace EVSoft.AppConsultaSIS
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+
+        MainViewModel vm;
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel();
+            BindingContext = vm =  new MainViewModel(this.Navigation);
         }
     }
 }
