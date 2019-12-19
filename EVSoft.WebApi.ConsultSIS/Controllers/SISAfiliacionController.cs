@@ -1,23 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using EVSoft.WebApi.ConsultSIS.Model;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EVSoft.WebApi.ConsultSIS.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Produces("application/json")] //se agrego
     [EnableCors("CorsPolicy")] //Habilita la politica CORS
     [Route("api/[controller]")]
     [ApiController]
     public class SISAfiliacionController : ControllerBase
     {
-
+        /// <summary>
+        /// Consultar Afiliacion SIS
+        /// </summary>
+        /// <param name="tiDocumento"></param>
+        /// <param name="nuDocumento"></param>
+        /// <returns></returns>
         [HttpGet("{tiDocumento}/{nuDocumento}")]
-        public IEnumerable<AfiliadoEntity> Get(string tiDocumento, string nuDocumento) {
+        public async Task<IEnumerable<AfiliadoEntity>> Get(string tiDocumento, string nuDocumento) {
 
             //pasa parameters
             var afiliadoSis = new WSISAfiliacion.afiliadoSisRequestType();
@@ -25,19 +30,21 @@ namespace EVSoft.WebApi.ConsultSIS.Controllers
             afiliadoSis.nuDocumento = nuDocumento;
 
             //devuelve object
-            var objResponce = new WSISAfiliacion.;
+            var objResponce = new WSISAfiliacion.AfiliadoSisServiceClient();
 
             AfiliadoEntity afiliadoEntity;
             List<AfiliadoEntity> afiliadoEntities = new List<AfiliadoEntity>();
 
-            foreach (var item in objResponce.FirstOrDefault(afiliadoSis))
+            var objAfiliado = await objResponce.afiliadoSisAsync(afiliadoSis).ConfigureAwait(true);
+
+            foreach (var item in objAfiliado.afiliadoSisResponse1)
             {
                 afiliadoEntity = new AfiliadoEntity()
                 {
-                    codError=item.codError,
-                    resultado=item.resultado,
-                    tipoDocumento=item.tipoDocumento,
-                    nroDocumento=item.nroDocumento,
+                    codError = item.codError,
+                    resultado = item.resultado,
+                    tipoDocumento = item.tipoDocumento,
+                    nroDocumento = item.nroDocumento,
                     apePaterno = item.apePaterno,
                     apeMaterno = item.apeMaterno,
                     nombres = item.nombres,

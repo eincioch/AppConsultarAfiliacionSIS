@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EVSoft.AppConsultaSIS.MainPage"
+             Title="Consultar Afiliacion SIS MINSA">
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle"
+                TargetType="{x:Type Entry}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource FlexoBold}" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                    Value="StartAndExpand" />
+            </Style>
+
+            <Style x:Key="ContenidLabelStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource FlexoRegular}" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                    Value="Center" />
+            </Style>
+
+            <Style x:Key="ComboStyle"
+                TargetType="{x:Type Picker}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource FlexoBold}" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                    Value="StartAndExpand" />
+            </Style>
+
+            <Style x:Key="ButtonStyle"
+                TargetType="{x:Type Button}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource MontserratRegular}" />
+                <Setter Property="TextColor"
+                    Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="VerticalOptions"
+                    Value="Center" />
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource AccentColor}"/>
+            </Style>
+
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="BorderColor" 
+                            Value="#757575">
+                </Setter>
+                <Setter Property="Margin">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="5,10,5,0"/>
+                            <On Platform="iOS" Value="0,5"/>
+                        </OnPlatform>
+                    </Setter.Value>
+
+                </Setter>
+                <Setter Property="Padding">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="0,0,0,-1"/>
+                            <On Platform="iOS" Value="0"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="BackgroundColor">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="Android" Value="{StaticResource WhiteColor}"/>
+                            <On Platform="iOS" Value="Transparent"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="OutlineColor">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="Android" Value="{StaticResource UCV_1}"/>
+                            <On Platform="iOS" Value="{StaticResource UCV_1}"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="CornerRadius">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Single">
+                            <On Platform="Android" Value="10"/>
+                            <On Platform="iOS" Value="0"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="IsClippedToBounds" Value="True"/>
+
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <ScrollView
+            Margin="5,0,0,5"
+            VerticalOptions="Center">
+            <StackLayout>
+
+                <StackLayout.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android" Value="20,25,20,0"/>
+                        <On Platform="iOS" Value="0,50,0,0"/>
+                    </OnPlatform>
+                </StackLayout.Margin>
+
+                <Grid VerticalOptions="Center" 
+                      ColumnSpacing="0" RowSpacing="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Tipo documento-->
+                    <Label Grid.Column="0" Grid.Row="0" 
+                        Margin="0,10,0,0"
+                        HorizontalOptions="End"
+                        Style="{StaticResource ContenidLabelStyle}"
+                        Text="Tipo Documento:"/>
+
+                    <Picker Grid.Column="1" Grid.Row="0" 
+                        Title="Seleccione..." 
+                            WidthRequest="250"
+                        TitleColor="{d:StaticResource UCV_1}"
+                        ItemsSource="{Binding TipoDocumentos}" 
+                        ItemDisplayBinding="{Binding Descr}"
+                        SelectedItem="{Binding SelectedTipoDocumento}"
+                        Style="{StaticResource ComboStyle}">
+                    </Picker>
+
+                    <!--Nro documento-->
+                    <Label Grid.Column="0" Grid.Row="1"
+                           Margin="0,10,0,0"
+                        HorizontalOptions="End"
+                        Text="Numero:"
+                        Style="{StaticResource ContenidLabelStyle}"/>
+                    <Entry Grid.Column="1" Grid.Row="1" 
+                        Text="{Binding NroDocu}"
+                           WidthRequest="250"
+                           d:Text="40606047"
+                        Style="{StaticResource TitleLabelStyle}"/>
+
+                    <Button Grid.Row="2"  Grid.ColumnSpan="2"
+                            Margin="0,10"
+                        Text="🔍 Buscar"
+                        TextColor="{StaticResource WhiteColor}"
+                            Style="{StaticResource ButtonStyle}"
+                        BackgroundColor="{StaticResource BtnBalonA}"
+                        Command="{Binding CommandFind}">
+                        <Button.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Int32">
+                                <On Platform="Android" Value="10"/>
+                                <On Platform="iOS" Value="20"/>
+                            </OnPlatform>
+                        </Button.CornerRadius>
+                    </Button>
+
+                </Grid>
+                <ActivityIndicator IsRunning="True" IsVisible="{Binding IsBusy}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

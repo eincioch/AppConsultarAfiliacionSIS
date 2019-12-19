@@ -20,7 +20,7 @@
     "EVSoft.WebApi.ConsultSIS": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "sisafiliacion",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EVSoft.WebApi.ConsultSIS</name>
+    </assembly>
+    <members>
+        <member name="T:EVSoft.WebApi.ConsultSIS.Controllers.SISAfiliacionController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:EVSoft.WebApi.ConsultSIS.Controllers.SISAfiliacionController.Get(System.String,System.String)">
+            <summary>
+            Consultar Afiliacion SIS
+            </summary>
+            <param name="tiDocumento"></param>
+            <param name="nuDocumento"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
