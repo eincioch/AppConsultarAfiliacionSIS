@@ -182,6 +182,7 @@
                         Text="{Binding NroDocu}"
                            WidthRequest="250"
                            d:Text="40606047"
+                           Keyboard="Numeric"
                         Style="{StaticResource TitleLabelStyle}"/>
 
                     <Button Grid.Row="3"  Grid.ColumnSpan="2"

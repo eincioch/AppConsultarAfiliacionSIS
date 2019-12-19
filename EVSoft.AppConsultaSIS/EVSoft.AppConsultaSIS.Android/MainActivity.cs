@@ -10,7 +10,7 @@ using Android.OS;
 namespace EVSoft.AppConsultaSIS.Droid
 {
     [Activity(Label = "@string/app_name", 
-        Icon = "@mipmap/icon", 
+        Icon = "@mipmap/ic_logosis", 
         Theme = "@style/MainTheme.Launcher", 
         MainLauncher = true, 
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
