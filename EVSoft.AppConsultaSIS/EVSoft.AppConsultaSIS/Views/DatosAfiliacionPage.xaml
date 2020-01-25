@@ -216,7 +216,7 @@
                                     d:BackgroundColor="AntiqueWhite"
                                     Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="1"
-                                   Text="{Binding AfiliadoEntity.apePaterno}"
+                                   Text="{Binding AfiliadoEntity.apPaterno}"
                                    d:Text="INCIO"
                                    d:BackgroundColor="AntiqueWhite"
                                    Style="{StaticResource TitleLabelStyle}"/>
@@ -227,7 +227,7 @@
                                         Text="Apellido Materno:"
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="2"
-                                           Text="{Binding AfiliadoEntity.apeMaterno}"
+                                           Text="{Binding AfiliadoEntity.apMaterno}"
                                    d:Text="Chapilliquen"
                                            Style="{StaticResource TitleLabelStyle}"/>
 
@@ -237,7 +237,7 @@
                                         Text="Nombres:"
                                           Style="{StaticResource ContenidLabelStyle}" />
                             <Label Grid.Column="1" Grid.Row="3"
-                                        Text="{Binding AfiliadoEntity.nombres}"
+                                        Text="{Binding AfiliadoEntity.deNombres}"
                                    d:Text="Enrique David Jose"
                                            Style="{StaticResource TitleLabelStyle}"/>
 

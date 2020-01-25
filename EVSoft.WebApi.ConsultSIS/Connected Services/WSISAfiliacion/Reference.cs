@@ -25,468 +25,123 @@ namespace WSISAfiliacion
     public partial class afiliadoType : object
     {
         
-        private string codErrorField;
+        private string nuAfiliacionField;
         
-        private string resultadoField;
+        private string tiDocumentoField;
         
-        private string tipoDocumentoField;
+        private string nuDocumentoField;
         
-        private string nroDocumentoField;
+        private string apPaternoField;
         
-        private string apePaternoField;
+        private string apMaternoField;
         
-        private string apeMaternoField;
+        private string deNombresField;
         
-        private string nombresField;
+        private string deEstadoField;
         
-        private string fecAfiliacionField;
-        
-        private string eessField;
-        
-        private string descEESSField;
-        
-        private string eessUbigeoField;
-        
-        private string descEESSUbigeoField;
-        
-        private string regimenField;
-        
-        private string tipoSeguroField;
-        
-        private string descTipoSeguroField;
-        
-        private string contratoField;
-        
-        private string fecCaducidadField;
-        
-        private string estadoField;
-        
-        private string tablaField;
-        
-        private string idNumRegField;
-        
-        private string generoField;
-        
-        private string fecNacimientoField;
-        
-        private string idUbigeoField;
-        
-        private string direccionField;
-        
-        private string disaField;
-        
-        private string tipoFormatoField;
-        
-        private string nroContratoField;
-        
-        private string correlativoField;
-        
-        private string idPlanField;
-        
-        private string idGrupoPoblacionalField;
-        
-        private string msgConfidencialField;
+        private string nuErrorField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-        public string codError
+        public string nuAfiliacion
         {
             get
             {
-                return this.codErrorField;
+                return this.nuAfiliacionField;
             }
             set
             {
-                this.codErrorField = value;
+                this.nuAfiliacionField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-        public string resultado
+        public string tiDocumento
         {
             get
             {
-                return this.resultadoField;
+                return this.tiDocumentoField;
             }
             set
             {
-                this.resultadoField = value;
+                this.tiDocumentoField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-        public string tipoDocumento
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=2)]
+        public string nuDocumento
         {
             get
             {
-                return this.tipoDocumentoField;
+                return this.nuDocumentoField;
             }
             set
             {
-                this.tipoDocumentoField = value;
+                this.nuDocumentoField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=3)]
-        public string nroDocumento
+        public string apPaterno
         {
             get
             {
-                return this.nroDocumentoField;
+                return this.apPaternoField;
             }
             set
             {
-                this.nroDocumentoField = value;
+                this.apPaternoField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=4)]
-        public string apePaterno
+        public string apMaterno
         {
             get
             {
-                return this.apePaternoField;
+                return this.apMaternoField;
             }
             set
             {
-                this.apePaternoField = value;
+                this.apMaternoField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=5)]
-        public string apeMaterno
+        public string deNombres
         {
             get
             {
-                return this.apeMaternoField;
+                return this.deNombresField;
             }
             set
             {
-                this.apeMaternoField = value;
+                this.deNombresField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=6)]
-        public string nombres
+        public string deEstado
         {
             get
             {
-                return this.nombresField;
+                return this.deEstadoField;
             }
             set
             {
-                this.nombresField = value;
+                this.deEstadoField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=7)]
-        public string fecAfiliacion
+        public string nuError
         {
             get
             {
-                return this.fecAfiliacionField;
+                return this.nuErrorField;
             }
             set
             {
-                this.fecAfiliacionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=8)]
-        public string eess
-        {
-            get
-            {
-                return this.eessField;
-            }
-            set
-            {
-                this.eessField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=9)]
-        public string descEESS
-        {
-            get
-            {
-                return this.descEESSField;
-            }
-            set
-            {
-                this.descEESSField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=10)]
-        public string eessUbigeo
-        {
-            get
-            {
-                return this.eessUbigeoField;
-            }
-            set
-            {
-                this.eessUbigeoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=11)]
-        public string descEESSUbigeo
-        {
-            get
-            {
-                return this.descEESSUbigeoField;
-            }
-            set
-            {
-                this.descEESSUbigeoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=12)]
-        public string regimen
-        {
-            get
-            {
-                return this.regimenField;
-            }
-            set
-            {
-                this.regimenField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=13)]
-        public string tipoSeguro
-        {
-            get
-            {
-                return this.tipoSeguroField;
-            }
-            set
-            {
-                this.tipoSeguroField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=14)]
-        public string descTipoSeguro
-        {
-            get
-            {
-                return this.descTipoSeguroField;
-            }
-            set
-            {
-                this.descTipoSeguroField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=15)]
-        public string contrato
-        {
-            get
-            {
-                return this.contratoField;
-            }
-            set
-            {
-                this.contratoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=16)]
-        public string fecCaducidad
-        {
-            get
-            {
-                return this.fecCaducidadField;
-            }
-            set
-            {
-                this.fecCaducidadField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=17)]
-        public string estado
-        {
-            get
-            {
-                return this.estadoField;
-            }
-            set
-            {
-                this.estadoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=18)]
-        public string tabla
-        {
-            get
-            {
-                return this.tablaField;
-            }
-            set
-            {
-                this.tablaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=19)]
-        public string idNumReg
-        {
-            get
-            {
-                return this.idNumRegField;
-            }
-            set
-            {
-                this.idNumRegField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=20)]
-        public string genero
-        {
-            get
-            {
-                return this.generoField;
-            }
-            set
-            {
-                this.generoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=21)]
-        public string fecNacimiento
-        {
-            get
-            {
-                return this.fecNacimientoField;
-            }
-            set
-            {
-                this.fecNacimientoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=22)]
-        public string idUbigeo
-        {
-            get
-            {
-                return this.idUbigeoField;
-            }
-            set
-            {
-                this.idUbigeoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=23)]
-        public string direccion
-        {
-            get
-            {
-                return this.direccionField;
-            }
-            set
-            {
-                this.direccionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=24)]
-        public string disa
-        {
-            get
-            {
-                return this.disaField;
-            }
-            set
-            {
-                this.disaField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=25)]
-        public string tipoFormato
-        {
-            get
-            {
-                return this.tipoFormatoField;
-            }
-            set
-            {
-                this.tipoFormatoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=26)]
-        public string nroContrato
-        {
-            get
-            {
-                return this.nroContratoField;
-            }
-            set
-            {
-                this.nroContratoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=27)]
-        public string correlativo
-        {
-            get
-            {
-                return this.correlativoField;
-            }
-            set
-            {
-                this.correlativoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=28)]
-        public string idPlan
-        {
-            get
-            {
-                return this.idPlanField;
-            }
-            set
-            {
-                this.idPlanField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=29)]
-        public string idGrupoPoblacional
-        {
-            get
-            {
-                return this.idGrupoPoblacionalField;
-            }
-            set
-            {
-                this.idGrupoPoblacionalField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=30)]
-        public string msgConfidencial
-        {
-            get
-            {
-                return this.msgConfidencialField;
-            }
-            set
-            {
-                this.msgConfidencialField = value;
+                this.nuErrorField = value;
             }
         }
     }
@@ -528,73 +183,6 @@ namespace WSISAfiliacion
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="afiliadosSisRequestType", Namespace="http://pidesalud.minsa.gob.pe/ws/AfiliadoSisService/")]
-    public partial class afiliadosSisRequestType : object
-    {
-        
-        private string usuarioField;
-        
-        private string passwordField;
-        
-        private string tiDocumentoField;
-        
-        private string nuDocumentoField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false)]
-        public string usuario
-        {
-            get
-            {
-                return this.usuarioField;
-            }
-            set
-            {
-                this.usuarioField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=1)]
-        public string password
-        {
-            get
-            {
-                return this.passwordField;
-            }
-            set
-            {
-                this.passwordField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=2)]
-        public string tiDocumento
-        {
-            get
-            {
-                return this.tiDocumentoField;
-            }
-            set
-            {
-                this.tiDocumentoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, EmitDefaultValue=false, Order=3)]
-        public string nuDocumento
-        {
-            get
-            {
-                return this.nuDocumentoField;
-            }
-            set
-            {
-                this.nuDocumentoField = value;
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://pidesalud.minsa.gob.pe/ws/AfiliadoSisService/", ConfigurationName="WSISAfiliacion.AfiliadoSisService")]
     public interface AfiliadoSisService
@@ -602,9 +190,6 @@ namespace WSISAfiliacion
         
         [System.ServiceModel.OperationContractAttribute(Action="http://pidesalud.minsa.gob.pe/ws/AfiliadoSisService/afiliadoSis", ReplyAction="*")]
         System.Threading.Tasks.Task<WSISAfiliacion.afiliadoSisResponse> afiliadoSisAsync(WSISAfiliacion.afiliadoSis request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://pidesalud.minsa.gob.pe/ws/AfiliadoSisService/afiliadosSis", ReplyAction="*")]
-        System.Threading.Tasks.Task<WSISAfiliacion.afiliadosSisResponse> afiliadosSisAsync(WSISAfiliacion.afiliadosSis request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -644,46 +229,6 @@ namespace WSISAfiliacion
         public afiliadoSisResponse(WSISAfiliacion.afiliadoSisResponseType afiliadoSisResponse1)
         {
             this.afiliadoSisResponse1 = afiliadoSisResponse1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class afiliadosSis
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="afiliadosSis", Namespace="http://pidesalud.minsa.gob.pe/ws/AfiliadoSisService/", Order=0)]
-        public WSISAfiliacion.afiliadosSisRequestType afiliadosSis1;
-        
-        public afiliadosSis()
-        {
-        }
-        
-        public afiliadosSis(WSISAfiliacion.afiliadosSisRequestType afiliadosSis1)
-        {
-            this.afiliadosSis1 = afiliadosSis1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class afiliadosSisResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="afiliadosSisResponse", Namespace="http://pidesalud.minsa.gob.pe/ws/AfiliadoSisService/", Order=0)]
-        public WSISAfiliacion.afiliadoSisResponseType afiliadosSisResponse1;
-        
-        public afiliadosSisResponse()
-        {
-        }
-        
-        public afiliadosSisResponse(WSISAfiliacion.afiliadoSisResponseType afiliadosSisResponse1)
-        {
-            this.afiliadosSisResponse1 = afiliadosSisResponse1;
         }
     }
     
@@ -748,19 +293,6 @@ namespace WSISAfiliacion
             WSISAfiliacion.afiliadoSis inValue = new WSISAfiliacion.afiliadoSis();
             inValue.afiliadoSis1 = afiliadoSis1;
             return ((WSISAfiliacion.AfiliadoSisService)(this)).afiliadoSisAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WSISAfiliacion.afiliadosSisResponse> WSISAfiliacion.AfiliadoSisService.afiliadosSisAsync(WSISAfiliacion.afiliadosSis request)
-        {
-            return base.Channel.afiliadosSisAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WSISAfiliacion.afiliadosSisResponse> afiliadosSisAsync(WSISAfiliacion.afiliadosSisRequestType afiliadosSis1)
-        {
-            WSISAfiliacion.afiliadosSis inValue = new WSISAfiliacion.afiliadosSis();
-            inValue.afiliadosSis1 = afiliadosSis1;
-            return ((WSISAfiliacion.AfiliadoSisService)(this)).afiliadosSisAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

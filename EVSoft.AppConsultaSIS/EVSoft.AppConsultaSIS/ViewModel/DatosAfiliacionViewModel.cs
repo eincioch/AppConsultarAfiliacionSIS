@@ -1,4 +1,5 @@
 ﻿using EVSoft.AppConsultaSIS.ViewModel.Base;
+using EVSoft.Dominio.ConsultSIS.Entities;
 using EVSoft.WebApi.ConsultSIS.Model;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ namespace EVSoft.AppConsultaSIS.ViewModel
     {
         public INavigation Navigation { get; set; }
 
-		private AfiliadoEntity afiliadoEntity;
+		private AfiliadoResumenEntity afiliadoEntity;
 
-		public AfiliadoEntity AfiliadoEntity
+		public AfiliadoResumenEntity AfiliadoEntity
 		{
 			get { return afiliadoEntity; }
 			set { afiliadoEntity = value;
@@ -21,7 +22,7 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 			}
 		}
 
-		public DatosAfiliacionViewModel(AfiliadoEntity afiliadoEntity, INavigation navigation)
+		public DatosAfiliacionViewModel(AfiliadoResumenEntity afiliadoEntity, INavigation navigation)
 		{
 			Navigation = navigation;
 			AfiliadoEntity = afiliadoEntity;

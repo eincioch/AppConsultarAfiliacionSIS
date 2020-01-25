@@ -1,4 +1,5 @@
-﻿using EVSoft.WebApi.ConsultSIS.Model;
+﻿using EVSoft.Dominio.ConsultSIS.Entities;
+using EVSoft.WebApi.ConsultSIS.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -25,10 +26,10 @@ namespace EVSoft.Backend.ConsultSIS.Services
             httpClient = new HttpClient();
         }
 
-        public async Task<List<AfiliadoEntity>> GetAfiliacionAsync(string tiDocumento, string nuDocumento)
+        public async Task<List<AfiliadoResumenEntity>> GetAfiliacionAsync(string tiDocumento, string nuDocumento)
         {
 
-            var afiliadoEntities = new List<AfiliadoEntity>();
+            var afiliadoEntities = new List<AfiliadoResumenEntity>();
             var Uri = new Uri(BaseEndPoint + tiDocumento +"/" + nuDocumento);
 
             try
@@ -37,7 +38,7 @@ namespace EVSoft.Backend.ConsultSIS.Services
                 if (Response.IsSuccessStatusCode)
                 {
                     var Content = await Response.Content.ReadAsStringAsync();
-                    afiliadoEntities = JsonConvert.DeserializeObject<List<AfiliadoEntity>>(Content);
+                    afiliadoEntities = JsonConvert.DeserializeObject<List<AfiliadoResumenEntity>>(Content);
                 }
             }
             catch (Exception ex)

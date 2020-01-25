@@ -2,10 +2,13 @@
 using EVSoft.AppConsultaSIS.ViewModel.Base;
 using EVSoft.AppConsultaSIS.Views;
 using EVSoft.Backend.ConsultSIS.Services;
+using EVSoft.Dominio.ConsultSIS.Entities;
 using EVSoft.WebApi.ConsultSIS.Model;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -58,13 +61,15 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 			Navigation = navigation;
 			TipoDocumentos = TipoDocumentoData.tipoDocumentos;
 
-			CommandFind = new Command<List<AfiliadoEntity>>(async (model) => await Consultar(model).ConfigureAwait(true));
+			CommandFind = new Command<List<AfiliadoResumenEntity>>(async (model) => await Consultar(model).ConfigureAwait(true));
 		}
 
-		async Task Consultar(List<AfiliadoEntity> afiliadoEntity)
+		async Task Consultar(List<AfiliadoResumenEntity> afiliadoEntity)
 		{
 			try
 			{
+				Analytics.TrackEvent("Consultar");
+
 				if (Validate())
 				{
 					IsBusy = true;
@@ -73,10 +78,17 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 					afiliadoEntity = await serviceClient.GetAfiliacionAsync(SelectedTipoDocumento.Id.ToString(), NroDocu);
 
 					if (afiliadoEntity.Count > 0)
-						if (afiliadoEntity[0].codError == "0000")
+						if (afiliadoEntity[0].nuError == "0000")
+						{
+							var properties = new Dictionary<string, string> {
+								{ "Method", "Consultar" },
+								{ "Result JSON", JsonConvert.SerializeObject(afiliadoEntity)}
+							  };
+							Analytics.TrackEvent("Consulta OK", properties);
 
-							
 							await Navigation.PushModalAsync(new DatosAfiliacionPage(new DatosAfiliacionViewModel(afiliadoEntity[0], Navigation))).ConfigureAwait(true);
+						
+						}
 						else
 							await Application.Current.MainPage.DisplayAlert("Resultado", "Usted NO cuenta con SIS, consulte ha ?", "Aceptar").ConfigureAwait(true);
 					else
@@ -84,8 +96,14 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 
 				}
 			}
-			catch (Exception)
+			catch (Exception exception)
 			{
+				var properties = new Dictionary<string, string> {
+					{ "Method", "Consultar" },
+					{ "Exception", "Detalle: " + exception.ToString() }
+				  };
+				Crashes.TrackError(exception, properties);
+
 				throw;
 			}
 			finally
