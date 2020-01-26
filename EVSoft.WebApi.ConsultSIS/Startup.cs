@@ -8,13 +8,23 @@ using Microsoft.OpenApi.Models;
 
 namespace EVSoft.WebApi.ConsultSIS
 {
+    /// <summary>
+    /// Class de inicio
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.

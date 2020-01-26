@@ -371,7 +371,8 @@
                                         Text="Estado:"
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="17"
-                                        Text="{Binding AfiliadoEntity.estado}"
+                                        Text="{Binding AfiliadoEntity.deEstado}"
+                                   TextColor="{StaticResource UCV_2}"
                                    d:Text="ACTIVO"
                                         Style="{StaticResource TitleLabelStyle}"/>
 
@@ -381,7 +382,8 @@
                                         Text="Numero Registro:"
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="18"
-                                        Text="{Binding AfiliadoEntity.idNumReg}"
+                                        Text="{Binding AfiliadoEntity.nuAfiliacion}"
+                                   TextColor="{StaticResource UCV_1}"
                                    d:Text="24581210"
                                         Style="{StaticResource TitleLabelStyle}"/>
 

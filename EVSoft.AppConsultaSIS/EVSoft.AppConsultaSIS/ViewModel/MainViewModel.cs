@@ -90,7 +90,7 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 						
 						}
 						else
-							await Application.Current.MainPage.DisplayAlert("Resultado", "Usted NO cuenta con SIS, consulte ha ?", "Aceptar").ConfigureAwait(true);
+							await Application.Current.MainPage.DisplayAlert("Resultado", "Usted NO cuenta con SIS, o esta Inactivo, consulte ha https://app.sis.gob.pe/SisConsultaEnLinea/Consulta/frmConsultaEnLinea.aspx", "Aceptar").ConfigureAwait(true);
 					else
 						await Application.Current.MainPage.DisplayAlert("Error", "Algó salio mal, vuelva a intentarlo", "Aceptar").ConfigureAwait(true);
 
