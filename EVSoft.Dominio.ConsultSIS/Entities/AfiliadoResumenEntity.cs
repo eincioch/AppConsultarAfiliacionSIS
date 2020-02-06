@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EVSoft.Dominio.ConsultSIS.Entities
+﻿namespace EVSoft.Dominio.ConsultSIS.Entities
 {
     public class AfiliadoResumenEntity
     {
-        public  string nuAfiliacion { get; set; }
+        public string nuAfiliacion { get; set; }
         public string tiDocumento { get; set; }
         public string nuDocumento { get; set; }
         public string apPaterno { get; set; }

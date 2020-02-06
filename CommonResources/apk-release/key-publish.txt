@@ -1,2 +1,6 @@
-Alias: KeyConsultSIS
-Contraseña: eRmlxQdFO0
+Alias: KeyConsultaSIS
+Contraseña: @eRmlxQdFO0
+
+EV-Soft Consultores
+TI
+SIS Consulta Afiliación

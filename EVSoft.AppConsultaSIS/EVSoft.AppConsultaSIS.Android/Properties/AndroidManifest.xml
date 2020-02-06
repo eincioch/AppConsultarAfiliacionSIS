@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="1.0.1" package="com.evsoft.appconsultasis" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="4" android:versionName="1.0.3" package="com.evsoft.appconsultasis" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="28" />
 	<application android:usesCleartextTraffic="true" android:allowBackup="false" android:networkSecurityConfig="@xml/network_security_config" android:label="Consulta SIS" android:icon="@mipmap/ic_logosis" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

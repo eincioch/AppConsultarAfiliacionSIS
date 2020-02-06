@@ -216,7 +216,7 @@
                                     d:BackgroundColor="AntiqueWhite"
                                     Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="1"
-                                   Text="{Binding AfiliadoEntity.apPaterno}"
+                                   Text="{Binding AfiliadoEntity.apePaterno}"
                                    d:Text="INCIO"
                                    d:BackgroundColor="AntiqueWhite"
                                    Style="{StaticResource TitleLabelStyle}"/>
@@ -227,7 +227,7 @@
                                         Text="Apellido Materno:"
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="2"
-                                           Text="{Binding AfiliadoEntity.apMaterno}"
+                                           Text="{Binding AfiliadoEntity.apeMaterno}"
                                    d:Text="Chapilliquen"
                                            Style="{StaticResource TitleLabelStyle}"/>
 
@@ -237,7 +237,7 @@
                                         Text="Nombres:"
                                           Style="{StaticResource ContenidLabelStyle}" />
                             <Label Grid.Column="1" Grid.Row="3"
-                                        Text="{Binding AfiliadoEntity.deNombres}"
+                                        Text="{Binding AfiliadoEntity.nombres}"
                                    d:Text="Enrique David Jose"
                                            Style="{StaticResource TitleLabelStyle}"/>
 
@@ -371,7 +371,7 @@
                                         Text="Estado:"
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="17"
-                                        Text="{Binding AfiliadoEntity.deEstado}"
+                                        Text="{Binding AfiliadoEntity.estado}"
                                    TextColor="{StaticResource UCV_2}"
                                    d:Text="ACTIVO"
                                         Style="{StaticResource TitleLabelStyle}"/>
@@ -382,7 +382,7 @@
                                         Text="Numero Registro:"
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="18"
-                                        Text="{Binding AfiliadoEntity.nuAfiliacion}"
+                                        Text="{Binding AfiliadoEntity.idNumReg}"
                                    TextColor="{StaticResource UCV_1}"
                                    d:Text="24581210"
                                         Style="{StaticResource TitleLabelStyle}"/>

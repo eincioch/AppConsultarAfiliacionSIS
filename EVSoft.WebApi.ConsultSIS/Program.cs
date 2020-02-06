@@ -1,22 +1,22 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace EVSoft.WebApi.ConsultSIS
 {
+#pragma warning disable CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Program'
     public class Program
+#pragma warning restore CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Program'
     {
+#pragma warning disable CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Program.Main(string[])'
         public static void Main(string[] args)
+#pragma warning restore CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Program.Main(string[])'
         {
             CreateHostBuilder(args).Build().Run();
         }
 
+#pragma warning disable CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Program.CreateHostBuilder(string[])'
         public static IHostBuilder CreateHostBuilder(string[] args) =>
+#pragma warning restore CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Program.CreateHostBuilder(string[])'
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {

@@ -1,10 +1,10 @@
-using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
 
 namespace EVSoft.WebApi.ConsultSIS
 {
@@ -28,7 +28,9 @@ namespace EVSoft.WebApi.ConsultSIS
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+#pragma warning disable CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Startup.ConfigureServices(IServiceCollection)'
         public void ConfigureServices(IServiceCollection services)
+#pragma warning restore CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Startup.ConfigureServices(IServiceCollection)'
         {
             services.AddControllers();
 
@@ -58,7 +60,8 @@ namespace EVSoft.WebApi.ConsultSIS
             //----------------
             //Politica de CORS
             //----------------
-            services.AddCors(option => {
+            services.AddCors(option =>
+            {
                 option.AddPolicy("CorsPolicy",
                     builder => builder.AllowAnyOrigin()
                     .AllowAnyHeader()  //permitir cualquier encabezado me venga
@@ -68,7 +71,9 @@ namespace EVSoft.WebApi.ConsultSIS
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+#pragma warning disable CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Startup.Configure(IApplicationBuilder, IWebHostEnvironment)'
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+#pragma warning restore CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Startup.Configure(IApplicationBuilder, IWebHostEnvironment)'
         {
             if (env.IsDevelopment())
             {

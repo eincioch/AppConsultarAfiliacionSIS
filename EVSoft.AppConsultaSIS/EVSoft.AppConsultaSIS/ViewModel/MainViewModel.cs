@@ -3,7 +3,6 @@ using EVSoft.AppConsultaSIS.ViewModel.Base;
 using EVSoft.AppConsultaSIS.Views;
 using EVSoft.Backend.ConsultSIS.Services;
 using EVSoft.Dominio.ConsultSIS.Entities;
-using EVSoft.WebApi.ConsultSIS.Model;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Newtonsoft.Json;
@@ -15,8 +14,8 @@ using Xamarin.Forms;
 
 namespace EVSoft.AppConsultaSIS.ViewModel
 {
-    public class MainViewModel : BaseViewModel
-    {
+	public class MainViewModel : BaseViewModel
+	{
 		public INavigation Navigation { get; set; }
 
 		private List<TipoDocumento> tipoDocumentos;
@@ -24,7 +23,9 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 		public List<TipoDocumento> TipoDocumentos
 		{
 			get { return tipoDocumentos; }
-			set { tipoDocumentos = value;
+			set
+			{
+				tipoDocumentos = value;
 				RaisePropertyChanged();
 			}
 		}
@@ -49,7 +50,9 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 		public string NroDocu
 		{
 			get { return _nroDocu; }
-			set { _nroDocu = value;
+			set
+			{
+				_nroDocu = value;
 				RaisePropertyChanged();
 			}
 		}
@@ -61,10 +64,10 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 			Navigation = navigation;
 			TipoDocumentos = TipoDocumentoData.tipoDocumentos;
 
-			CommandFind = new Command<List<AfiliadoResumenEntity>>(async (model) => await Consultar(model).ConfigureAwait(true));
+			CommandFind = new Command<List<AfiliadoEntity>>(async (model) => await Consultar(model).ConfigureAwait(true));
 		}
 
-		async Task Consultar(List<AfiliadoResumenEntity> afiliadoEntity)
+		async Task Consultar(List<AfiliadoEntity> afiliadoEntity)
 		{
 			try
 			{
@@ -78,7 +81,7 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 					afiliadoEntity = await serviceClient.GetAfiliacionAsync(SelectedTipoDocumento.Id.ToString(), NroDocu);
 
 					if (afiliadoEntity.Count > 0)
-						if (afiliadoEntity[0].nuError == "0000")
+						if (afiliadoEntity[0].codError == "0000")
 						{
 							var properties = new Dictionary<string, string> {
 								{ "Method", "Consultar" },
@@ -87,12 +90,15 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 							Analytics.TrackEvent("Consulta OK", properties);
 
 							await Navigation.PushModalAsync(new DatosAfiliacionPage(new DatosAfiliacionViewModel(afiliadoEntity[0], Navigation))).ConfigureAwait(true);
-						
+
 						}
 						else
-							await Application.Current.MainPage.DisplayAlert("Resultado", "Usted NO cuenta con SIS, o esta Inactivo, consulte ha https://app.sis.gob.pe/SisConsultaEnLinea/Consulta/frmConsultaEnLinea.aspx", "Aceptar").ConfigureAwait(true);
-					else
-						await Application.Current.MainPage.DisplayAlert("Error", "Algó salio mal, vuelva a intentarlo", "Aceptar").ConfigureAwait(true);
+							await Application.Current.MainPage.DisplayAlert("Resultado", "Usted NO cuenta con SIS, o esta Inactivo.\nMás información consulte https://app.sis.gob.pe/SisConsultaEnLinea/Consulta/frmConsultaEnLinea.aspx", "Aceptar").ConfigureAwait(true);
+                    else
+                    {
+							
+                    }
+						await Application.Current.MainPage.DisplayAlert("Servicio", "En estos momentos estamos presentando problemas de conexión, vuelva a intentarlo en unos 30min", "Aceptar").ConfigureAwait(true);
 
 				}
 			}
@@ -112,9 +118,11 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 			}
 		}
 
-		private bool Validate() {
+		private bool Validate()
+		{
 
-			if (SelectedTipoDocumento == null) {
+			if (SelectedTipoDocumento == null)
+			{
 				Application.Current.MainPage.DisplayAlert("Validación", "Seleccione Tipo Documento", "Aceptar");
 				return false;
 			}
