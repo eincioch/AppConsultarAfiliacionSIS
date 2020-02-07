@@ -43,11 +43,11 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
-    <AndroidKeyStore>false</AndroidKeyStore>
+    <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidPackageFormat>apk</AndroidPackageFormat>
     <MandroidI18n />
     <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
-    <AndroidSigningKeyStore>C:\Users\Dev. Enrique Incio\AppData\Local\Xamarin\Mono for Android\Keystore\KeyConsultaSIS\keySISstore.jks</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>C:\Users\Dev. Enrique Incio\AppData\Local\Xamarin\Mono for Android\Keystore\keySISstore\keySISstore.keystore</AndroidSigningKeyStore>
     <AndroidSigningStorePass>@eRmlxQdFO0</AndroidSigningStorePass>
     <AndroidSigningKeyPass>@eRmlxQdFO0</AndroidSigningKeyPass>
     <AndroidSigningKeyAlias>KeyConsultaSIS</AndroidSigningKeyAlias>

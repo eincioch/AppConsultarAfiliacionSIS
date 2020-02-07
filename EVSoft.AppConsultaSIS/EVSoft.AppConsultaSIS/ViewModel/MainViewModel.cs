@@ -93,13 +93,11 @@ namespace EVSoft.AppConsultaSIS.ViewModel
 
 						}
 						else
-							await Application.Current.MainPage.DisplayAlert("Resultado", "Usted NO cuenta con SIS, o esta Inactivo.\nMás información consulte https://app.sis.gob.pe/SisConsultaEnLinea/Consulta/frmConsultaEnLinea.aspx", "Aceptar").ConfigureAwait(true);
+							await Application.Current.MainPage.DisplayAlert("Resultado", "Usted NO cuenta con SIS, o esta Inactivo.\nMás información consulte \nhttps://app.sis.gob.pe/SisConsultaEnLinea/Consulta/frmConsultaEnLinea.aspx", "Aceptar").ConfigureAwait(true);
                     else
                     {
-							
+						await Application.Current.MainPage.DisplayAlert("Servicio", "En estos momentos estamos presentando problemas de conexión, vuelva a intentarlo en unos 30min", "Aceptar").ConfigureAwait(true);	
                     }
-						await Application.Current.MainPage.DisplayAlert("Servicio", "En estos momentos estamos presentando problemas de conexión, vuelva a intentarlo en unos 30min", "Aceptar").ConfigureAwait(true);
-
 				}
 			}
 			catch (Exception exception)

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace EVSoft.Backend.ConsultSIS.Services
@@ -45,7 +46,5 @@ namespace EVSoft.Backend.ConsultSIS.Services
             }
             return afiliadoEntities;
         }
-
-
     }
 }
