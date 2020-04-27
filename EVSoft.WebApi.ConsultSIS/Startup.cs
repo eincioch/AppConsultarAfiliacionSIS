@@ -1,3 +1,5 @@
+using EVSoft.WebApi.ConsultSIS.Contracts;
+using EVSoft.WebApi.ConsultSIS.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -5,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
+using System.IO;
+using System.Reflection;
 
 namespace EVSoft.WebApi.ConsultSIS
 {
@@ -28,11 +32,8 @@ namespace EVSoft.WebApi.ConsultSIS
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-#pragma warning disable CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Startup.ConfigureServices(IServiceCollection)'
         public void ConfigureServices(IServiceCollection services)
-#pragma warning restore CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Startup.ConfigureServices(IServiceCollection)'
         {
-            services.AddControllers();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -40,8 +41,8 @@ namespace EVSoft.WebApi.ConsultSIS
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "API - Consultar Afiliado SIS",
-                    Description = "Servicio gratuito Consultar Afiliado SIS MINSA",
+                    Title = "API - EV-Soft Consultores",
+                    Description = "Servicio gratuito para consumir",
                     TermsOfService = new Uri("https://www.datosabiertos.gob.pe"),
                     Contact = new OpenApiContact
                     {
@@ -55,6 +56,10 @@ namespace EVSoft.WebApi.ConsultSIS
                         Url = new Uri("https://www.datosabiertos.gob.pe/dataset/minsa-consulta-de-afiliados-al-sis"),
                     }
                 });
+
+                var xfile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xpath = Path.Combine(AppContext.BaseDirectory,xfile);
+                c.IncludeXmlComments(xpath);
             });
 
             //----------------
@@ -68,12 +73,14 @@ namespace EVSoft.WebApi.ConsultSIS
                     .AllowAnyMethod()  //permite PUT, GET, POST, DEELETE .. etc
                 );
             });
+
+            services.AddSingleton<ILoggerService, LoggerService>();
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-#pragma warning disable CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Startup.Configure(IApplicationBuilder, IWebHostEnvironment)'
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-#pragma warning restore CS1591 // Falta el comentario XML para el tipo o miembro visible de forma pública 'Startup.Configure(IApplicationBuilder, IWebHostEnvironment)'
         {
             if (env.IsDevelopment())
             {
