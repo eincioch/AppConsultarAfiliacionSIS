@@ -9,16 +9,16 @@
     <Color x:Key="WhiteColor">#FFFFFF</Color>
     <Color x:Key="AccentColor">#FF4081</Color>
     <Color x:Key="PinkColor">#FC3767</Color>
-    <Color x:Key="UCV_1">#002855</Color>
+    <Color x:Key="UCV_1">#ff1c5d82</Color>
     <Color x:Key="UCV_2">#C8102E</Color>
     <Color x:Key="UCV_3">#124377</Color>
 
     <Color x:Key="ButtonUCV_1">#01A0C7</Color>
     <Color x:Key="ButtonUCV_2">#333333</Color>
 
-    <Color x:Key="BtnBalonA">#FF4081</Color>
+    <Color x:Key="BtnBalonA">#ff1c5d82</Color>
     <Color x:Key="BtnBalonB">#2770ff</Color>
 
-    <Color x:Key="FondoStarMenu">#032E59</Color>
+    <Color x:Key="FondoStarMenu">#ff1c5d82</Color>
 
 </ResourceDictionary>

@@ -48,6 +48,8 @@
                     Value="{StaticResource MediumSize}" />
                 <Setter Property="HorizontalOptions"
                     Value="Center" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource UCV_1}" />
             </Style>
 
             <Style x:Key="FrameStyle" TargetType="Frame">
@@ -203,12 +205,15 @@
                             </Grid.ColumnDefinitions>
 
                             <!--Datos paciente-->
-                            <Label Grid.ColumnSpan="2" Grid.Row="0" Padding="7"
-                                    Text="DATOS PACIENTE" 
-                                    BackgroundColor="{DynamicResource UCV_1}"
-                                   TextColor="White"
-                                    Style="{StaticResource ContenidLabelStyle}"/>
-
+                            <Frame Grid.ColumnSpan="2" Grid.Row="0" Padding="7"
+                                   BackgroundColor="{DynamicResource UCV_1}"
+                                   CornerRadius="7">
+                               <Label 
+                                    Text="DATOS PERSONALES" 
+                                    TextColor="White"
+                                    Style="{StaticResource ContenidLabelStyle}"/> 
+                            </Frame>
+                            
                             <!--apePaterno-->
                             <Label Grid.Column="0" Grid.Row="1"
                                     HorizontalOptions="End"
@@ -257,8 +262,8 @@
                                         Text="Fecha Nacimiento:"
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="5"
-                                        Text="{Binding AfiliadoEntity.fecNacimiento}"
-                                   d:Text="20-05-1980"
+                                        Text="{Binding AfiliadoEntity.fecNacimiento, StringFormat='{0:D}'}"
+                                   d:Text="20/05/1980"
                                            Style="{StaticResource TitleLabelStyle}"/>
 
                             <!--idUbigeo-->
@@ -288,11 +293,16 @@
                                  Grid.ColumnSpan="2" Grid.Row="8" Margin="5,0,15,0"/>
 
                             <!--Datos Centro atención-->
-                            <Label Grid.ColumnSpan="2" Grid.Row="9" Padding="7"
+                            <Frame Grid.ColumnSpan="2" Grid.Row="9" Padding="7"
+                                BackgroundColor="{DynamicResource UCV_1}"
+                                   CornerRadius="7">
+                                <Label 
                                     Text="DATOS CENTRO ATENCIÓN" 
                                     BackgroundColor="{DynamicResource UCV_1}"
                                    TextColor="White"
                                     Style="{StaticResource ContenidLabelStyle}"/>
+                            </Frame>
+                            
                             
                             <!--eess-->
                             <Label Grid.Column="0" Grid.Row="10"
@@ -348,11 +358,12 @@
                             <!--contrato-->
                             <Label Grid.Column="0" Grid.Row="15"
                                         HorizontalOptions="End"
-                                        Text="Contrato:"
+                                        Text="N° de Afiliación:"
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="15"
                                         Text="{Binding AfiliadoEntity.contrato}"
-                                   d:Text="2-40606047"
+                                        TextColor="{StaticResource UCV_1}"
+                                        d:Text="2-40606047"
                                         Style="{StaticResource TitleLabelStyle}"/>
 
                             <!--fecCaducidad-->
@@ -362,7 +373,7 @@
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="16"
                                         Text="{Binding AfiliadoEntity.fecCaducidad}"
-                                   d:Text=""
+                                        d:Text=""
                                         Style="{StaticResource TitleLabelStyle}"/>
 
                             <!--estado-->
@@ -370,11 +381,17 @@
                                         HorizontalOptions="End"
                                         Text="Estado:"
                                             Style="{StaticResource ContenidLabelStyle}"/>
-                            <Label Grid.Column="1" Grid.Row="17"
-                                        Text="{Binding AfiliadoEntity.estado}"
-                                   TextColor="{StaticResource UCV_2}"
-                                   d:Text="ACTIVO"
-                                        Style="{StaticResource TitleLabelStyle}"/>
+                            <Frame Grid.Column="1" Grid.Row="17"
+                                   BackgroundColor="{DynamicResource UCV_1}"
+                                   CornerRadius="25">
+                               <Label 
+                                    Text="{Binding AfiliadoEntity.estado}"
+                                    TextColor="{StaticResource WhiteColor}"
+                                    d:Text="ACTIVO"
+                                   Margin="0,-10,0,-9"
+                                    Style="{StaticResource TitleLabelStyle}"/> 
+                            </Frame>
+                            
 
                             <!--idNumReg-->
                             <Label Grid.Column="0" Grid.Row="18"
@@ -383,8 +400,8 @@
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="18"
                                         Text="{Binding AfiliadoEntity.idNumReg}"
-                                   TextColor="{StaticResource UCV_1}"
-                                   d:Text="24581210"
+                                        TextColor="{StaticResource UCV_1}"
+                                        d:Text="24581210"
                                         Style="{StaticResource TitleLabelStyle}"/>
 
                             <!--nroContrato-->
@@ -394,12 +411,12 @@
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="19"
                                         Text="{Binding AfiliadoEntity.nroContrato}"
-                                   d:Text="40606047"
+                                        d:Text="40606047"
                                         Style="{StaticResource TitleLabelStyle}"/>
 
                             <BoxView HeightRequest="1" 
-                                 BackgroundColor="{StaticResource UCV_1}" 
-                                 Grid.ColumnSpan="2" Grid.Row="20" Margin="5,0,15,0"/>
+                                        BackgroundColor="{StaticResource UCV_1}" 
+                                        Grid.ColumnSpan="2" Grid.Row="20" Margin="5,0,15,0"/>
 
                             <!--msgConfidencial-->
                             <Label Grid.Column="0" Grid.Row="21"
@@ -408,7 +425,7 @@
                                             Style="{StaticResource ContenidLabelStyle}"/>
                             <Label Grid.Column="1" Grid.Row="21" TextColor="{DynamicResource UCV_2}"
                                         Text="{Binding AfiliadoEntity.msgConfidencial}"
-                                   d:Text="Su consulta esta siendo registrada con su identificacion. \n         Recuerde que usted es responsable por la confidencialidad de la informacion consultada, segun la Ley de Proteccion de Datos Personales."
+                                        d:Text="Su consulta esta siendo registrada con su identificacion. \n         Recuerde que usted es responsable por la confidencialidad de la informacion consultada, segun la Ley de Proteccion de Datos Personales."
                                         Style="{StaticResource TitleLabelStyle}"/>
 
                         </Grid>

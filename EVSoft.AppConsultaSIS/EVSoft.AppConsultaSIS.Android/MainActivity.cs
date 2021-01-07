@@ -1,8 +1,10 @@
 ﻿
+using Android;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.Content;
 
 namespace EVSoft.AppConsultaSIS.Droid
 {
@@ -22,13 +24,18 @@ namespace EVSoft.AppConsultaSIS.Droid
             base.OnCreate(savedInstanceState);
 
             //https://github.com/xamarin/Xamarin.Forms/pull/7907    CollectionView_Experimental
-            global::Xamarin.Forms.Forms.SetFlags(//"Shell_Experimental", "Visual_Experimental",
-                                                    "CarouselView_Experimental");
+            //global::Xamarin.Forms.Forms.SetFlags(//"Shell_Experimental", "Visual_Experimental",
+            //                                        "CarouselView_Experimental");
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+            //if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.ReadPhoneState) != (int)Permission.Granted)
+            //{
+            //    RequestPermissions(new string[] { Manifest.Permission.ReadPhoneState }, 0); //, Manifest.Permission.WriteExternalStorage, Manifest.Permission.ReadExternalStorage }, 0);
+            //}
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
